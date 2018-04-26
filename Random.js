@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Random extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { color: [17, 44, 124] };
+    }
+
     componentDidMount() {
         this.applyColor();
     }
@@ -36,8 +41,8 @@ class Random extends React.Component {
         return (
             <div>
                 <h1 className={this.isLight() ? 'white' : 'black'}>
-
-                </h1>
+                    'Your color is {this.formatColor(this.state.color)}.'
+        </h1>
             </div>
         );
     }
